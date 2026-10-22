@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GENTLEMEN Innovation — барбершоп в Бишкеке</title>
+<meta name="description" content="GENTLEMEN Innovation — современный барбершоп в Бишкеке: стрижки, борода, королевское бритьё, ИИ-подбор причёски и онлайн-запись.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E💈%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0c0a09;--card:#1c1917;--gold:#d97706;--cream:#fef3c7;--white:#fff;--muted:#a8a29e;--glass:rgba(28,25,23,.55);--line:rgba(254,243,199,.12)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:'Plus Jakarta Sans','Inter',system-ui,sans-serif;background:var(--bg);color:var(--cream);line-height:1.6;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;background:radial-gradient(600px 400px at 85% 10%,rgba(217,119,6,.12),transparent),radial-gradient(500px 400px at 5% 60%,rgba(217,119,6,.07),transparent);pointer-events:none;z-index:-1}
+a{color:inherit;text-decoration:none}
+img,svg{max-width:100%;display:block}
+.container{width:min(1160px,92%);margin-inline:auto}
+section{padding:96px 0}
+.tag{color:var(--gold);font-weight:700;letter-spacing:.18em;text-transform:uppercase;font-size:.78rem}
+h1,h2,h3{line-height:1.15;color:var(--white)}
+h2{font-size:clamp(1.9rem,4vw,2.9rem);margin:10px 0 16px}
+.grad{background:linear-gradient(90deg,#fbbf24,var(--gold),#fef3c7);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{color:var(--muted);max-width:640px}
+.head{margin-bottom:48px}
+.glass{background:var(--glass);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:20px}
+.btn{display:inline-block;border:0;cursor:pointer;font:inherit;font-weight:700;padding:14px 28px;border-radius:999px;transition:.3s;background:linear-gradient(135deg,#f59e0b,var(--gold));color:#1c1917}
+.btn:hover{box-shadow:0 0 28px rgba(217,119,6,.65);transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--cream);border:1px solid var(--gold)}
+.btn.ghost:hover{background:rgba(217,119,6,.15)}
+.btn.sm{padding:9px 18px;font-size:.9rem}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s,transform .8s}
+.reveal.show{opacity:1;transform:none}
+/* header */
+header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(12,10,9,.7);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{font-weight:800;letter-spacing:.12em;color:var(--white)}
+.logo span{color:var(--gold);font-weight:500;letter-spacing:.05em;font-size:.8em;margin-left:4px}
+nav ul{display:flex;gap:26px;list-style:none;align-items:center}
+nav a{font-size:.92rem;color:var(--cream);opacity:.85;transition:.2s}
+nav a:hover{color:var(--gold);opacity:1}
+.burger{display:none;background:none;border:0;cursor:pointer;width:42px;height:42px}
+.burger span{display:block;height:2px;background:var(--cream);margin:7px 8px;transition:.3s}
+.burger.open span:nth-child(1){transform:translateY(9px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-9px) rotate(-45deg)}
+/* hero */
+.hero{min-height:100vh;display:flex;align-items:center;padding-top:110px;position:relative}
+.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(2.4rem,6vw,4.6rem);margin:14px 0 20px}
+.hero p{color:var(--muted);font-size:1.1rem;max-width:520px;margin-bottom:32px}
+.btns{display:flex;gap:14px;flex-wrap:wrap}
+.hero-art{padding:32px;text-align:center}
+.hero-art svg{width:100%;max-width:320px;margin:auto}
+.hero-art p{margin:14px 0 0;font-size:.95rem}
+/* grids */
+.grid{display:grid;gap:22px}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+.g2{grid-template-columns:1fr 1fr}
+.box{padding:28px;transition:.3s}
+.box:hover{transform:translateY(-6px);border-color:rgba(217,119,6,.5)}
+.ico{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;font-size:1.6rem;background:rgba(217,119,6,.15);margin-bottom:16px}
+.box h3{font-size:1.15rem;margin-bottom:8px}
+.box p{color:var(--muted);font-size:.95rem}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.about-grid p{color:var(--muted);margin-bottom:14px}
+.checks{list-style:none;display:grid;gap:12px}
+.checks li{padding:16px 20px;display:flex;gap:14px;align-items:center}
+.checks b{color:var(--gold)}
+/* works */
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:32px}
+.filters button{font:inherit;cursor:pointer;padding:9px 20px;border-radius:999px;border:1px solid var(--line);background:var(--glass);color:var(--cream);transition:.25s}
+.filters button.active,.filters button:hover{background:var(--gold);color:#1c1917;border-color:var(--gold)}
+.work{overflow:hidden;display:flex;flex-direction:column;transition:.35s}
+.work:hover{transform:translateY(-6px);box-shadow:0 0 30px rgba(217,119,6,.25)}
+.work.hide{display:none}
+.pic{height:210px;display:grid;place-items:center;cursor:zoom-in;position:relative;overflow:hidden}
+.pic svg{width:62%;height:auto;transition:.4s}
+.work:hover .pic svg{transform:scale(1.08) rotate(-3deg)}
+.pic::after{content:"🔍 Увеличить";position:absolute;bottom:10px;right:12px;font-size:.75rem;background:rgba(0,0,0,.55);padding:3px 10px;border-radius:999px;opacity:0;transition:.3s}
+.work:hover .pic::after{opacity:1}
+.work-body{padding:22px;display:flex;flex-direction:column;gap:8px;flex:1}
+.work-body p{color:var(--muted);font-size:.92rem;flex:1}
+.price{font-size:1.5rem;font-weight:800}
+.row{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:6px}
+/* stats */
+.stats{padding:64px 0}
+.stat{text-align:center;padding:32px 16px}
+.stat b{display:block;font-size:clamp(2rem,4vw,3rem);font-weight:800}
+.stat span{color:var(--muted);font-size:.95rem}
+/* reviews */
+.review{padding:28px;display:flex;flex-direction:column;gap:14px}
+.stars{color:var(--gold);letter-spacing:3px}
+.review p{font-size:.97rem}
+.who{display:flex;align-items:center;gap:12px;margin-top:auto}
+.av{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-weight:800;color:#1c1917;background:linear-gradient(135deg,#fbbf24,var(--gold))}
+.who small{color:var(--muted);display:block}
+/* form */
+.form-wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:start}
+form{padding:32px;display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.f{display:flex;flex-direction:column;gap:6px}
+.f.full{grid-column:1/-1}
+label{font-size:.85rem;color:var(--cream);font-weight:600}
+input,select,textarea{font:inherit;color:var(--white);background:rgba(12,10,9,.7);border:1px solid var(--line);border-radius:12px;padding:12px 14px;width:100%;transition:.2s}
+input:focus,select:focus,textarea:focus{outline:0;border-color:var(--gold);box-shadow:0 0 0 3px rgba(217,119,6,.2)}
+select option{background:#1c1917}
+textarea{resize:vertical;min-height:90px}
+.err{color:#f87171;font-size:.78rem;min-height:1em}
+.f.bad input,.f.bad select{border-color:#f87171}
+.perks{list-style:none;display:grid;gap:12px;margin-top:22px;color:var(--muted)}
+.perks li::before{content:"✓ ";color:var(--gold);font-weight:800}
+/* contacts */
+.contact{padding:28px}
+.contact h3{margin-bottom:8px}
+.contact p,.contact a{color:var(--muted);display:block}
+.contact a:hover{color:var(--gold)}
+/* footer */
+footer{border-top:1px solid var(--line);padding:56px 0 28px;background:#080706}
+.foot{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px}
+.foot h4{color:var(--white);margin-bottom:12px}
+.foot li{list-style:none;margin-bottom:8px;color:var(--muted);font-size:.93rem}
+.foot a:hover{color:var(--gold)}
+.copy{text-align:center;color:var(--muted);font-size:.82rem;margin-top:36px;padding-top:20px;border-top:1px solid var(--line)}
+/* modal */
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.8);backdrop-filter:blur(6px);display:none;place-items:center;z-index:100;padding:20px}
+.modal.open{display:grid}
+.modal-box{max-width:560px;width:100%;padding:36px;text-align:center;position:relative;animation:pop .3s}
+@keyframes pop{from{transform:scale(.9);opacity:0}to{transform:none;opacity:1}}
+.modal-box .big svg{width:70%;margin:0 auto 16px}
+.modal-box p{color:var(--muted);margin:10px 0 20px}
+.x{position:absolute;top:12px;right:16px;background:none;border:0;color:var(--cream);font-size:1.8rem;cursor:pointer}
+.ok{font-size:3rem}
+/* responsive */
+@media(max-width:980px){.g4{grid-template-columns:1fr 1fr}.g3{grid-template-columns:1fr 1fr}.hero-grid,.about-grid,.form-wrap{grid-template-columns:1fr}.foot{grid-template-columns:1fr 1fr}}
+@media(max-width:820px){
+ .burger{display:block}
+ nav{position:absolute;top:72px;left:0;right:0;background:rgba(12,10,9,.97);max-height:0;overflow:hidden;transition:max-height .4s}
+ nav.open{max-height:480px;border-bottom:1px solid var(--line)}
+ nav ul{flex-direction:column;padding:20px 0;gap:18px}
+}
+@media(max-width:600px){section{padding:68px 0}.g3,.g4,.g2,.foot{grid-template-columns:1fr}.g4.stat-grid{grid-template-columns:1fr 1fr}form{grid-template-columns:1fr;padding:22px}.btns .btn{width:100%;text-align:center}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header>
+ <div class="container nav">
+  <a href="#home" class="logo">GENTLEMEN<span>Innovation</span></a>
+  <nav id="menu" aria-label="Главное меню">
+   <ul>
+    <li><a href="#about">О нас</a></li>
+    <li><a href="#services">Сервис</a></li>
+    <li><a href="#tech">Технологии</a></li>
+    <li><a href="#works">Работы</a></li>
+    <li><a href="#reviews">Отзывы</a></li>
+    <li><a href="#contacts">Контакты</a></li>
+    <li><a href="#booking" class="btn sm">Записаться</a></li>
+   </ul>
+  </nav>
+  <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false"><span></span><span></span><span></span></button>
+ </div>
+</header>
+
+<main>
+<!-- 1. HERO -->
+<section class="hero" id="home">
+ <div class="container hero-grid">
+  <div class="reveal">
+   <span class="tag">GENTLEMEN Innovation · Бишкек</span>
+   <h1>Твой стиль.<br><span class="grad">Твои правила</span></h1>
+   <p>Современные стрижки, персональный подбор образа и профессиональные барберы. Классика мужского клуба и цифровые технологии в одном месте.</p>
+   <div class="btns">
+    <a href="#works" class="btn">Смотреть работы</a>
+    <a href="#booking" class="btn ghost">Записаться</a>
+   </div>
+  </div>
+  <div class="glass hero-art reveal">
+   <svg viewBox="0 0 200 200" role="img" aria-label="Барберская эмблема">
+    <defs><linearGradient id="hg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fbbf24"/><stop offset="1" stop-color="#d97706"/></linearGradient></defs>
+    <circle cx="100" cy="100" r="88" fill="none" stroke="url(#hg)" stroke-width="3"/>
+    <circle cx="100" cy="100" r="76" fill="none" stroke="#fef3c7" stroke-opacity=".25" stroke-dasharray="3 6"/>
+    <g fill="none" stroke="url(#hg)" stroke-width="7" stroke-linecap="round"><circle cx="72" cy="132" r="14"/><circle cx="128" cy="132" r="14"/><path d="M82 121 L132 56M118 121 L68 56"/></g>
+   </svg>
+   <p class="grad" style="font-weight:700;font-size:1.1rem">Since 2019 · Чуй / Исанова · 10 мкр</p>
+  </div>
+ </div>
+</section>
+
+<!-- 2. ABOUT -->
+<section id="about">
+ <div class="container about-grid">
+  <div class="reveal">
+   <span class="tag">О барбершопе</span>
+   <h2>Классика, <span class="grad">усиленная технологиями</span></h2>
+   <p>GENTLEMEN Innovation начался с небольшого кресла на проспекте Чуй и идеи: мужчина в Бишкеке заслуживает сервиса уровня лучших барбершопов мира — без очередей, без случайных стрижек и без «сделайте как обычно».</p>
+   <p><b style="color:var(--cream)">Наша миссия</b> — помогать мужчинам выглядеть уверенно каждый день. Мы сочетаем горячие полотенца, опасную бритву и честный разговор с ИИ-подбором образа и цифровой записью.</p>
+  </div>
+  <ul class="checks reveal">
+   <li class="glass"><b>01</b> Барберы с опытом от 5 лет и постоянным обучением</li>
+   <li class="glass"><b>02</b> Индивидуальный подбор причёски под форму лица</li>
+   <li class="glass"><b>03</b> Премиальная косметика и стерильные инструменты</li>
+   <li class="glass"><b>04</b> Запись онлайн за минуту, без звонков</li>
+  </ul>
+ </div>
+</section>
+
+<!-- 3. SERVICES -->
+<section id="services">
+ <div class="container">
+  <div class="head reveal"><span class="tag">Услуги и сервис</span><h2>Всё для <span class="grad">настоящего джентльмена</span></h2><p class="lead">От быстрой стрижки перед встречей до полного ухода с выездом мастера к вам.</p></div>
+  <div class="grid g3">
+   <div class="glass box reveal"><div class="ico">✂️</div><h3>Мужские стрижки</h3><p>Классические, фейды, андеркаты и текстурные стрижки с укладкой.</p></div>
+   <div class="glass box reveal"><div class="ico">🧔</div><h3>Моделирование бороды</h3><p>Форма, контур, уход маслами и бальзамами.</p></div>
+   <div class="glass box reveal"><div class="ico">🪒</div><h3>Королевское бритьё</h3><p>Опасная бритва, горячие полотенца и успокаивающий уход.</p></div>
+   <div class="glass box reveal"><div class="ico">🎨</div><h3>Камуфляж седины</h3><p>Деликатное тонирование — естественный результат без «покраски».</p></div>
+   <div class="glass box reveal"><div class="ico">📱</div><h3>Онлайн-запись</h3><p>Выберите барбера, услугу и время в удобный момент 24/7.</p></div>
+   <div class="glass box reveal"><div class="ico">🚗</div><h3>Выездной сервис</h3><p>Барбер приедет домой или в офис по Бишкеку. Подбор образа включён.</p></div>
+  </div>
+ </div>
+</section>
+
+<!-- 4. TECH -->
+<section id="tech">
+ <div class="container">
+  <div class="head reveal"><span class="tag">Инновационные технологии</span><h2>Барбершоп <span class="grad">нового поколения</span></h2></div>
+  <div class="grid g4">
+   <div class="glass box reveal"><div class="ico">🤖</div><h3>ИИ-подбор стрижки</h3><p>Анализ формы лица по фото и рекомендации лучших вариантов.</p></div>
+   <div class="glass box reveal"><div class="ico">📚</div><h3>Цифровой каталог</h3><p>Сотни причёсок с фильтрами по типу волос и длине.</p></div>
+   <div class="glass box reveal"><div class="ico">💬</div><h3>Онлайн-консультации</h3><p>Обсудите образ с барбером в мессенджере до визита.</p></div>
+   <div class="glass box reveal"><div class="ico">💳</div><h3>Лояльность и CashBack</h3><p>Возвращаем до 5% с каждого визита на ваш бонусный счёт.</p></div>
+  </div>
+ </div>
+</section>
+
+<!-- 5. WORKS -->
+<section id="works">
+ <div class="container">
+  <div class="head reveal"><span class="tag">Наши услуги и работы</span><h2>Цены и <span class="grad">примеры стилей</span></h2><p class="lead">Нажмите на изображение, чтобы увеличить. Цены указаны в сомах (KGS).</p></div>
+  <div class="filters reveal" id="filters">
+   <button class="active" data-f="all">Все</button><button data-f="cut">Стрижки</button><button data-f="beard">Борода</button><button data-f="shave">Бритьё</button><button data-f="combo">Комплексы</button>
+  </div>
+  <div class="grid g3" id="works-grid"></div>
+ </div>
+</section>
+
+<!-- 6. STATS -->
+<section class="stats">
+ <div class="container grid g4 stat-grid">
+  <div class="glass stat reveal"><b class="grad" data-to="2000" data-suffix="+">0</b><span>довольных клиентов</span></div>
+  <div class="glass stat reveal"><b class="grad" data-to="98" data-suffix="%">0</b><span>положительных отзывов</span></div>
+  <div class="glass stat reveal"><b class="grad" data-to="4.9" data-dec="1" data-suffix="/5">0</b><span>средний рейтинг</span></div>
+  <div class="glass stat reveal"><b class="grad" data-to="5">0</b><span>профессиональных барберов</span></div>
+ </div>
+ <p class="copy" style="border:0;margin-top:14px">Демонстрационные данные — замените на реальные показатели</p>
+</section>
+
+<!-- 7. REVIEWS -->
+<section id="reviews">
+ <div class="container">
+  <div class="head reveal"><span class="tag">Отзывы клиентов</span><h2>Говорят <span class="grad">наши гости</span></h2></div>
+  <div class="grid g3">
+   <article class="glass review reveal"><div class="stars">★★★★★</div><p>Ходил по разным местам, пока не нашёл GENTLEMEN. Мастер сразу подобрал стрижку под мою форму лица, и теперь все спрашивают, где стригусь.</p><div class="who"><div class="av">А</div><div>Азамат К.<small>Бишкек, пр. Чуй</small></div></div></article>
+   <article class="glass review reveal"><div class="stars">★★★★★</div><p>Королевское бритьё — это отдельное удовольствие. Горячее полотенце, аккуратная работа, отличная атмосфера. Записался онлайн за пару минут.</p><div class="who"><div class="av">Н</div><div>Нурлан Т.<small>Бишкек, 10 мкр</small></div></div></article>
+   <article class="glass review reveal"><div class="stars">★★★★★</div><p>Заказывал выездного барбера к себе в офис перед важной презентацией. Пунктуально, чисто, профессионально. Буду обращаться ещё.</p><div class="who"><div class="av">Т</div><div>Тимур С.<small>Бишкек</small></div></div></article>
+  </div>
+  <p class="copy" style="border:0">Демонстрационные отзывы — замените текст в блоках .review на реальные</p>
+ </div>
+</section>
+
+<!-- 8. BOOKING -->
+<section id="booking">
+ <div class="container form-wrap">
+  <div class="reveal">
+   <span class="tag">Онлайн-запись</span>
+   <h2>Запишитесь <span class="grad">за минуту</span></h2>
+   <p class="lead">Оставьте заявку, и администратор подтвердит время по телефону или в мессенджере.</p>
+   <ul class="perks"><li>Подтверждение в течение 15 минут</li><li>Бесплатная консультация по образу</li><li>CashBack с первого визита</li></ul>
+  </div>
+  <form id="form" class="glass reveal" novalidate>
+   <div class="f"><label for="name">Имя *</label><input id="name" name="name" autocomplete="name" placeholder="Ваше имя"><span class="err"></span></div>
+   <div class="f"><label for="phone">Телефон *</label><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="+996 555 123 456"><span class="err"></span></div>
+   <div class="f"><label for="barber">Барбер *</label><select id="barber" name="barber"><option value="">Выберите барбера</option><option>Любой свободный</option><option>Руслан</option><option>Эрлан</option><option>Данияр</option><option>Максим</option><option>Бекзат</option></select><span class="err"></span></div>
+   <div class="f"><label for="service">Услуга *</label><select id="service" name="service"><option value="">Выберите услугу</option><option>Мужская стрижка — 500 KGS</option><option>Стрижка и борода — 800 KGS</option><option>Королевское бритьё — 600 KGS</option><option>Комплекс «Джентльмен» — 1 000 KGS</option><option>Камуфляж седины — 700 KGS</option><option>Выездной барбер — 1 500 KGS</option></select><span class="err"></span></div>
+   <div class="f"><label for="date">Желаемая дата *</label><input id="date" name="date" type="date"><span class="err"></span></div>
+   <div class="f"><label for="time">Время посещения *</label><select id="time" name="time"><option value="">Выберите время</option></select><span class="err"></span></div>
+   <div class="f full"><label for="msg">Сообщение</label><textarea id="msg" name="message" placeholder="Пожелания к стрижке или вопросы"></textarea></div>
+   <div class="f full"><button class="btn" type="submit">Записаться</button></div>
+  </form>
+ </div>
+</section>
+
+<!-- 9. CONTACTS -->
+<section id="contacts">
+ <div class="container">
+  <div class="head reveal"><span class="tag">Контакты</span><h2>Ждём вас <span class="grad">в Бишкеке</span></h2></div>
+  <div class="grid g3">
+   <div class="glass contact reveal"><h3>📍 пр. Чуй / ул. Исанова</h3><p>Бишкек, Кыргызстан</p><p>Ежедневно 10:00 – 21:00</p></div>
+   <div class="glass contact reveal"><h3>📍 Микрорайон 10</h3><p>Бишкек, Кыргызстан</p><p>Ежедневно 10:00 – 21:00</p></div>
+   <div class="glass contact reveal"><h3>📞 Связь</h3><a href="tel:+996555123456">+996 555 123 456</a><a href="mailto:hello@gentlemen-innovation.kg">hello@gentlemen-innovation.kg</a><a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a><a href="https://t.me/" target="_blank" rel="noopener">Telegram</a></div>
+  </div>
+ </div>
+</section>
+</main>
+
+<!-- 10. FOOTER -->
+<footer>
+ <div class="container">
+  <div class="foot">
+   <div><a href="#home" class="logo">GENTLEMEN<span>Innovation</span></a><p style="color:var(--muted);margin-top:12px;max-width:320px;font-size:.93rem">Современный барбершоп в Бишкеке. Твой стиль. Твои правила.</p></div>
+   <div><h4>Навигация</h4><ul><li><a href="#about">О нас</a></li><li><a href="#services">Сервис</a></li><li><a href="#works">Работы и цены</a></li><li><a href="#booking">Запись</a></li></ul></div>
+   <div><h4>Контакты</h4><ul><li>пр. Чуй / ул. Исанова</li><li>Микрорайон 10</li><li>+996 555 123 456</li><li>hello@gentlemen-innovation.kg</li></ul></div>
+  </div>
+  <div class="copy">© <span id="year">2026</span> GENTLEMEN Innovation. Все права защищены.</div>
+ </div>
+</footer>
+
+<!-- Modals -->
+<div class="modal" id="zoom" role="dialog" aria-modal="true" aria-label="Просмотр изображения"><div class="glass modal-box"><button class="x" data-close aria-label="Закрыть">×</button><div class="big" id="zoom-pic"></div><h3 id="zoom-title"></h3><p id="zoom-text"></p><a href="#booking" class="btn" data-close id="zoom-book">Записаться</a></div></div>
+<div class="modal" id="done" role="dialog" aria-modal="true" aria-label="Заявка принята"><div class="glass modal-box"><button class="x" data-close aria-label="Закрыть">×</button><div class="ok">✅</div><h3 class="grad" style="font-size:1.8rem">Заявка принята!</h3><p id="done-text"></p><button class="btn" data-close>Отлично</button></div></div>
+
+<script>
+(function(){
+'use strict';
+const $=(s,c=document)=>c.querySelector(s), $$=(s,c=document)=>[...c.querySelectorAll(s)];
+
+/* ---- Данные карточек (цены в KGS) ---- */
+const ICONS={
+ cut:'<path d="M60 150c0-40 10-80 60-90 40-8 70 20 70 60v30" /><path d="M70 100c20-30 60-40 100-10" /><path d="M60 150h130"/>',
+ beard:'<path d="M70 70c0 70 20 110 60 110s60-40 60-110" /><path d="M90 120c20 14 60 14 80 0" /><circle cx="108" cy="90" r="4"/><circle cx="152" cy="90" r="4"/>',
+ shave:'<rect x="50" y="110" width="120" height="30" rx="6" transform="rotate(-25 110 125)"/><path d="M150 70l40-18M160 90l36-4"/><path d="M60 170h140"/>',
+ combo:'<circle cx="80" cy="150" r="20"/><circle cx="160" cy="150" r="20"/><path d="M92 134l70-80M148 134L78 54"/>'
+};
+const GRAD={cut:['#292524','#78350f'],beard:['#1c1917','#92400e'],shave:['#0c0a09','#b45309'],combo:['#292524','#d97706']};
+const WORKS=[
+ {t:'cut',n:'Мужская стрижка',d:'Классика или современный фейд с мытьём головы и укладкой.',p:'500'},
+ {t:'cut',n:'Фейд и текстура',d:'Плавный переход, текстурная верхняя часть и стайлинг.',p:'600'},
+ {t:'beard',n:'Стрижка и борода',d:'Мужская стрижка плюс моделирование и уход за бородой.',p:'800'},
+ {t:'beard',n:'Оформление бороды',d:'Форма, контур, горячее полотенце и масло для бороды.',p:'400'},
+ {t:'shave',n:'Королевское бритьё',d:'Опасная бритва, горячие компрессы и успокаивающий бальзам.',p:'600'},
+ {t:'combo',n:'Комплекс «Джентльмен»',d:'Стрижка, борода, королевское бритьё и укладка — полный образ.',p:'1 000'}
+];
+const svg=t=>`<svg viewBox="0 0 250 220" fill="none" stroke="#fbbf24" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-hidden="true">${ICONS[t]}</svg>`;
+const grid=$('#works-grid');
+grid.innerHTML=WORKS.map((w,i)=>`<article class="glass work reveal" data-t="${w.t}" data-i="${i}">
+ <div class="pic" style="background:linear-gradient(135deg,${GRAD[w.t][0]},${GRAD[w.t][1]})" tabindex="0" role="button" aria-label="Увеличить: ${w.n}">${svg(w.t)}</div>
+ <div class="work-body"><h3>${w.n}</h3><p>${w.d}</p><div class="row"><span class="price grad">${w.p} KGS</span><a href="#booking" class="btn sm" data-book="${w.n} — ${w.p} KGS">Записаться</a></div></div></article>`).join('');
+
+/* ---- Меню ---- */
+const burger=$('#burger'), menu=$('#menu');
+const toggle=o=>{menu.classList.toggle('open',o);burger.classList.toggle('open',o);burger.setAttribute('aria-expanded',o)};
+burger.addEventListener('click',()=>toggle(!menu.classList.contains('open')));
+
+/* ---- Плавная прокрутка ---- */
+$$('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{
+ const id=a.getAttribute('href'); const el=id.length>1&&$(id);
+ if(el){e.preventDefault();el.scrollIntoView({behavior:'smooth'});toggle(false);history.replaceState(null,'',id)}
+}));
+
+/* ---- Появление при скролле ---- */
+const io=new IntersectionObserver((es,o)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');o.unobserve(e.target)}}),{threshold:.12});
+$$('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%4)*80+'ms';io.observe(el)});
+
+/* ---- Счётчики ---- */
+const counter=new IntersectionObserver((es,o)=>es.forEach(e=>{
+ if(!e.isIntersecting)return; o.unobserve(e.target);
+ const el=e.target,to=+el.dataset.to,dec=+el.dataset.dec||0,suf=el.dataset.suffix||'',dur=1800,t0=performance.now();
+ (function tick(t){const k=Math.min((t-t0)/dur,1),v=to*(1-Math.pow(1-k,3));
+  el.textContent=(dec?v.toFixed(dec):Math.round(v).toLocaleString('ru-RU'))+(k===1?suf:'');
+  if(k<1)requestAnimationFrame(tick)})(t0);
+}),{threshold:.5});
+$$('[data-to]').forEach(el=>counter.observe(el));
+
+/* ---- Фильтр ---- */
+$('#filters').addEventListener('click',e=>{
+ const b=e.target.closest('button'); if(!b)return;
+ $$('#filters button').forEach(x=>x.classList.toggle('active',x===b));
+ $$('.work').forEach(w=>w.classList.toggle('hide',b.dataset.f!=='all'&&w.dataset.t!==b.dataset.f));
+});
+
+/* ---- Модальные окна ---- */
+const zoom=$('#zoom'),done=$('#done');
+const open=m=>{m.classList.add('open');document.body.style.overflow='hidden'};
+const close=()=>{$$('.modal.open').forEach(m=>m.classList.remove('open'));document.body.style.overflow=''};
+$$('.modal').forEach(m=>m.addEventListener('click',e=>{if(e.target===m||e.target.closest('[data-close]'))close()}));
+document.addEventListener('keydown',e=>{if(e.key==='Escape')close()});
+const showZoom=card=>{
+ const w=WORKS[card.dataset.i];
+ $('#zoom-pic').innerHTML=`<div style="border-radius:16px;padding:20px;background:linear-gradient(135deg,${GRAD[w.t][0]},${GRAD[w.t][1]})">${svg(w.t)}</div>`;
+ $('#zoom-title').textContent=w.n+' — '+w.p+' KGS';$('#zoom-text').textContent=w.d;
+ $('#zoom-book').dataset.book=w.n+' — '+w.p+' KGS';open(zoom);
+};
+grid.addEventListener('click',e=>{const p=e.target.closest('.pic');if(p)showZoom(p.closest('.work'))});
+grid.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.target.classList.contains('pic')){e.preventDefault();showZoom(e.target.closest('.work'))}});
+
+/* ---- Предвыбор услуги по кнопке "Записаться" ---- */
+const service=$('#service');
+document.addEventListener('click',e=>{
+ const b=e.target.closest('[data-book]'); if(!b)return;
+ const o=[...service.options].find(o=>o.text.replace(/\s/g,'')===b.dataset.book.replace(/\s/g,''));
+ if(o)service.value=o.value||o.text;
+});
+
+/* ---- Форма ---- */
+const form=$('#form'),dateEl=$('#date'),timeEl=$('#time');
+const today=new Date(),pad=n=>String(n).padStart(2,'0');
+const iso=`${today.getFullYear()}-${pad(today.getMonth()+1)}-${pad(today.getDate())}`;
+dateEl.min=iso;
+for(let h=10;h<=20;h++)['00','30'].forEach(m=>{if(h===20&&m==='30')return;timeEl.add(new Option(`${pad(h)}:${m}`,`${pad(h)}:${m}`))});
+$('#year').textContent=today.getFullYear();
+
+const rules={
+ name:v=>v.trim().length>=2||'Введите имя (минимум 2 символа)',
+ phone:v=>/^\+996[\s-]?\(?\d{3}\)?[\s-]?\d{2,3}[\s-]?\d{2,3}[\s-]?\d{0,3}$/.test(v.trim())&&v.replace(/\D/g,'').length===12||'Формат: +996 555 123 456',
+ barber:v=>!!v||'Выберите барбера',
+ service:v=>!!v||'Выберите услугу',
+ date:v=>(!!v&&v>=iso)||'Выберите сегодняшнюю или будущую дату',
+ time:v=>!!v||'Выберите время'
+};
+const check=el=>{
+ const r=rules[el.name]; if(!r)return true;
+ const res=r(el.value),f=el.closest('.f');
+ f.classList.toggle('bad',res!==true);f.querySelector('.err').textContent=res===true?'':res;
+ return res===true;
+};
+$$('input,select',form).forEach(el=>{el.addEventListener('blur',()=>check(el));el.addEventListener('input',()=>el.closest('.f').classList.contains('bad')&&check(el))});
+
+form.addEventListener('submit',async e=>{
+ e.preventDefault();
+ const ok=$$('input,select',form).map(check).every(Boolean);
+ if(!ok){const bad=$('.f.bad input,.f.bad select',form);bad&&bad.focus();return}
+ const data=Object.fromEntries(new FormData(form).entries());
+ /* Для реальной отправки: создайте форму на formspree.io (или используйте Telegram-бота / Google Apps Script)
+    и вставьте адрес сюда, например 'https://formspree.io/f/xxxxxxx'. Пока пусто — режим демонстрации. */
+ const ENDPOINT='';
+ if(ENDPOINT){
+  try{
+   const r=await fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)});
+   if(!r.ok)throw new Error();
+  }catch{alert('Не удалось отправить заявку. Позвоните нам: +996 555 123 456');return}
+ }
+ $('#done-text').textContent=`${data.name}, мы ждём вас ${data.date.split('-').reverse().join('.')} в ${data.time}. Администратор свяжется с вами по номеру ${data.phone} для подтверждения.`;
+ open(done);form.reset();
+});
+})();
+</script>
+</body>
+</html>
